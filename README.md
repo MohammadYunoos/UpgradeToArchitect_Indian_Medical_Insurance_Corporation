@@ -1,0 +1,2 @@
+# UpgradeToArchitect_Indian_Medical_Insurance_Corporation
+Repository as part of Upgrade2Architect training
