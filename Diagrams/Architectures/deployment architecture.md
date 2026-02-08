@@ -2,7 +2,7 @@
 
 ---
 
-## Azure IaaS Deployment Diagram – IMIC Perspective (Explanation)
+## Azure IaaS Deployment Diagram
 
 ### Why IaaS for IMIC?
 
@@ -74,7 +74,7 @@ IaaS is used when IMIC requires:
 
 ---
 
-## Azure PaaS Deployment Diagram – IMIC Perspective (Explanation)
+## Azure PaaS Deployment Diagram
 
 ### Why PaaS for IMIC?
 
@@ -155,4 +155,5 @@ PaaS is best suited for IMIC when the focus is on:
 | Cost Efficiency | Lower infrastructure cost, higher operations effort | Optimized |
 
 ---
+
 
