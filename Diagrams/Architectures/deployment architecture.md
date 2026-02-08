@@ -144,7 +144,7 @@ PaaS is best suited for IMIC when the focus is on:
 
 ---
 
-## Key Differences – IMIC Context
+## Key Differences – IMIC
 
 | Area | IaaS | PaaS |
 |-----|-----|-----|
@@ -155,3 +155,4 @@ PaaS is best suited for IMIC when the focus is on:
 | Cost Efficiency | Lower infrastructure cost, higher operations effort | Optimized |
 
 ---
+
