@@ -1,0 +1,60 @@
+version: '3.8'
+
+# In-Memory Development Environment
+# Uses SQLite in-memory database (no persistence, super fast for testing)
+# No PostgreSQL, no PgAdmin - lightweight and simple
+
+services:
+  # Intranet Site
+  intranet-site:
+    build:
+      context: ../intranet-site
+      dockerfile: Dockerfile
+    container_name: medical-intranet-site
+    ports:
+      - "8001:8000"
+    environment:
+      - APP_NAME=intranet-site
+      - ENVIRONMENT=development
+      - LOG_LEVEL=INFO
+      - ALLOWED_ORIGINS=http://localhost:3000,http://localhost:8001,http://localhost:8002
+      - DATABASE_URL=sqlite:///:memory:
+      - DB_TYPE=sqlite
+      - IN_MEMORY=true
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    networks:
+      - medical-network
+
+  # Internet Site
+  internet-site:
+    build:
+      context: ../internet-site
+      dockerfile: Dockerfile
+    container_name: medical-internet-site
+    ports:
+      - "8002:8000"
+    environment:
+      - APP_NAME=internet-site
+      - ENVIRONMENT=development
+      - LOG_LEVEL=INFO
+      - ALLOWED_ORIGINS=*
+      - DATABASE_URL=sqlite:///:memory:
+      - DB_TYPE=sqlite
+      - IN_MEMORY=true
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    networks:
+      - medical-network
+
+networks:
+  medical-network:
+    driver: bridge

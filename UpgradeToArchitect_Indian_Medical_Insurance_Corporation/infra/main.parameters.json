@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "eastus"
+    },
+    "acrName": {
+      "value": "medinsacr001"
+    },
+    "acrSku": {
+      "value": "Standard"
+    },
+    "enableAcrAdmin": {
+      "value": true
+    },
+    "appServicePlanName": {
+      "value": "medins-plan"
+    },
+    "appServicePlanSkuName": {
+      "value": "B1"
+    },
+    "intranetWebAppName": {
+      "value": "medins-intranet"
+    },
+    "internetWebAppName": {
+      "value": "medins-internet"
+    },
+    "intranetImageName": {
+      "value": "intranet-site"
+    },
+    "intranetImageTag": {
+      "value": "latest"
+    },
+    "internetImageName": {
+      "value": "internet-site"
+    },
+    "internetImageTag": {
+      "value": "latest"
+    }
+  }
+}
